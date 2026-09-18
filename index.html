@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<title>Yaoshuo Wu</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8E%93%3C/text%3E%3C/svg%3E">
+<meta property="og:title" content="Yaoshuo Wu">
+<meta property="og:description" content="Academic homepage of Yaoshuo Wu (吴耀铄), undergraduate student at Shenzhen Technology University, working on AI for education.">
+<meta property="og:image" content="https://potato0705.github.io/images/avatar.jpg">
+<meta name="description" content="Academic homepage of Yaoshuo Wu (吴耀铄), undergraduate student at Shenzhen Technology University.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@500&text=吴耀铄&display=swap">
+<style>
+  :root {
+    --bg: #ffffff;
+    --text: #3a3f44;
+    --heading: #1f2428;
+    --muted: #677077;
+    --link: #22578c;
+    --link-hover: #143b62;
+    --rule: #e3e6e9;
+    --nav-bg: rgba(255, 255, 255, 0.94);
+    --nav-text: #5f676e;
+    --ring: #dde1e5;
+    --chip-bg: #edf3f9;
+    --chip-text: #22578c;
+    --focus: #2f78c0;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #121417;
+      --text: #ccd2d8;
+      --heading: #eef1f4;
+      --muted: #8f99a2;
+      --link: #8db8e6;
+      --link-hover: #b8d3f1;
+      --rule: #2a2f35;
+      --nav-bg: rgba(18, 20, 23, 0.92);
+      --nav-text: #a3acb4;
+      --ring: #2e343a;
+      --chip-bg: #1c2733;
+      --chip-text: #9fc4eb;
+      --focus: #8db8e6;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #121417;
+    --text: #ccd2d8;
+    --heading: #eef1f4;
+    --muted: #8f99a2;
+    --link: #8db8e6;
+    --link-hover: #b8d3f1;
+    --rule: #2a2f35;
+    --nav-bg: rgba(18, 20, 23, 0.92);
+    --nav-text: #a3acb4;
+    --ring: #2e343a;
+    --chip-bg: #1c2733;
+    --chip-text: #9fc4eb;
+    --focus: #8db8e6;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  img { max-width: 100%; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Noto Sans", -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: var(--link); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+  a:hover { color: var(--link-hover); }
+  :focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; border-radius: 3px; }
+
+  /* 顶部导航 */
+  .masthead {
+    position: sticky;
+    top: env(safe-area-inset-top, 0px);
+    z-index: 10;
+    background: var(--nav-bg);
+    backdrop-filter: saturate(160%) blur(8px);
+    -webkit-backdrop-filter: saturate(160%) blur(8px);
+    border-bottom: 1px solid var(--rule);
+  }
+  .masthead nav {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding-inline: 16px;
+    min-height: 56px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+  .masthead a { color: var(--nav-text); text-decoration: none; font-size: 15.5px; white-space: nowrap; }
+  .masthead a:hover { color: var(--heading); }
+  .masthead a.home { color: var(--heading); font-weight: 700; }
+
+  /* 左侧个人卡片 + 右侧正文 */
+  .page {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding-inline: 16px;
+    padding-block: 32px 40px;
+    display: grid;
+    grid-template-columns: 250px minmax(0, 1fr);
+    gap: 56px;
+  }
+  .sidebar { align-self: start; }
+  @media (min-width: 901px) and (min-height: 720px) {
+    .sidebar { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 88px); }
+  }
+  .avatar {
+    display: block;
+    width: 200px;
+    height: auto;
+    max-width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 1px solid var(--ring);
+    background: #ffffff;
+  }
+  .author-name {
+    margin: 16px 0 0;
+    font-size: 1.55rem;
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--heading);
+  }
+  .author-name .zh { font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif; font-size: 1.02rem; font-weight: 500; color: var(--muted); margin-left: 8px; }
+  .author-role { margin: 4px 0 14px; color: var(--muted); font-size: 0.95rem; }
+  .author-keywords { margin: 0 0 14px; font-size: 0.93rem; line-height: 1.75; }
+  .author-links { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; font-size: 0.93rem; }
+  .author-links li { display: flex; align-items: center; gap: 8px; min-width: 0; margin: 0; }
+  .author-links a { overflow-wrap: anywhere; }
+  .icon { width: 16px; height: 16px; flex: none; fill: currentColor; color: var(--muted); }
+
+  .content { min-width: 0; max-width: 820px; }
+  section, .pubs > li { scroll-margin-top: calc(env(safe-area-inset-top, 0px) + 76px); }
+  h2 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 44px 0 14px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--rule);
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.35;
+    color: var(--heading);
+    text-wrap: balance;
+  }
+  section:first-child h2 { margin-top: 0; }
+  h3 { margin: 22px 0 8px; font-size: 1.06rem; font-weight: 700; color: var(--heading); }
+  p { margin: 0 0 12px; }
+  ul, ol { margin: 0; padding-left: 1.35em; }
+  li { margin: 6px 0; }
+  li::marker { color: var(--muted); }
+  strong { color: var(--heading); font-weight: 700; }
+
+  .news .date { font-style: italic; font-variant-numeric: tabular-nums; }
+
+  .timeline > li { margin: 0 0 18px; }
+  .timeline .head { color: var(--heading); font-weight: 700; }
+  .timeline .when { font-variant-numeric: tabular-nums; }
+  .timeline .sep { color: var(--muted); font-weight: 400; margin-inline: 6px; }
+  .timeline .meta { color: var(--muted); font-size: 0.94rem; }
+  .timeline ul { margin-top: 6px; padding-left: 1.2em; list-style: circle; }
+  .timeline ul li { margin: 4px 0; }
+
+  .pubs > li { margin: 0 0 18px; padding-left: 2px; }
+  .pubs > li::marker { color: var(--heading); font-weight: 600; font-variant-numeric: tabular-nums; }
+  .pub-title { display: block; font-weight: 600; color: var(--heading); line-height: 1.5; }
+  .pub-authors { display: block; }
+  .pub-authors .me { font-weight: 700; color: var(--heading); }
+  .pub-venue { display: block; font-weight: 700; color: var(--heading); }
+  .pub-status { display: block; font-style: italic; color: var(--muted); }
+  .pub-note { display: block; margin-top: 3px; font-size: 0.93rem; color: var(--muted); }
+  .pub-links { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
+  .chip { display: inline-block; padding: 1px 9px; border-radius: 4px; font-size: 0.8rem; font-weight: 500; line-height: 1.7; text-decoration: none; background: var(--chip-bg); color: var(--chip-text); }
+  .chip:hover { color: var(--link-hover); text-decoration: underline; }
+  .legend { margin: -4px 0 6px; font-size: 0.9rem; color: var(--muted); }
+
+  .footer { margin-top: 48px; padding-top: 14px; border-top: 1px solid var(--rule); font-size: 0.86rem; color: var(--muted); }
+
+  @media (max-width: 900px) {
+    .page { grid-template-columns: minmax(0, 1fr); gap: 28px; padding-block: 24px 36px; }
+    .sidebar { display: grid; grid-template-columns: 170px minmax(0, 1fr); gap: 24px; align-items: center; }
+    .avatar { width: 170px; }
+    .author-name { margin-top: 0; }
+    .author-links { display: flex; flex-wrap: wrap; gap: 6px 18px; }
+    .masthead a.home { display: none; }
+    .masthead nav { flex-wrap: wrap; gap: 2px 16px; padding-block: 8px; }
+    section, .pubs > li { scroll-margin-top: calc(env(safe-area-inset-top, 0px) + 104px); }
+  }
+  @media (max-width: 540px) {
+    body { font-size: 15.5px; }
+    .sidebar { grid-template-columns: minmax(0, 1fr); gap: 14px; }
+    .avatar { width: 136px; }
+    h2 { font-size: 1.3rem; margin-top: 36px; }
+  }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></symbol>
+  <symbol id="i-uni" viewBox="0 0 24 24"><path d="M12 2 2 7v2h20V7L12 2zM4 11v7h3v-7H4zm6.5 0v7h3v-7h-3zM17 11v7h3v-7h-3zM2 20v2h20v-2H2z"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24"><path d="M5 3h11a3 3 0 0 1 3 3v15H7a2 2 0 0 1-2-2V3zm2 14v2h10v-2H7zm2-10v2h7V7H9zm0 4v2h7v-2H9z"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></symbol>
+  <symbol id="i-github" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></symbol>
+</svg>
+
+<div lang="en">
+<header class="masthead">
+  <nav aria-label="Sections">
+    <a class="home" href="#about-me">Homepage</a>
+    <a href="#about-me">About Me</a>
+    <a href="#news">News</a>
+    <a href="#education">Education</a>
+    <a href="#experience">Experience</a>
+    <a href="#publications">Publications</a>
+    <a href="#awards">Awards</a>
+  </nav>
+</header>
+
+<div class="page">
+  <aside class="sidebar" aria-label="Profile">
+    <img class="avatar" src="images/avatar.jpg" alt="Portrait of Yaoshuo Wu" width="200" height="200">
+    <div>
+      <h1 class="author-name">Yaoshuo Wu<span class="zh" lang="zh-CN">吴耀铄</span></h1>
+      <p class="author-role">Undergraduate @ SZTU</p>
+      <p class="author-keywords">AI for Education;<br>Educational Agents;<br>LLM Scoring &amp; Assessment</p>
+      <ul class="author-links">
+        <li><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>Shenzhen, China</li>
+        <li><svg class="icon" aria-hidden="true"><use href="#i-uni"/></svg>Shenzhen Technology University</li>
+        <li><svg class="icon" aria-hidden="true"><use href="#i-book"/></svg>Intelligent Perception Engineering</li>
+        <li><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg><a href="mailto:yaoshuowu75@gmail.com">yaoshuowu75@gmail.com</a></li>
+        <li><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg><a href="https://github.com/Potato0705">GitHub</a></li>
+      </ul>
+    </div>
+  </aside>
+
+  <main class="content">
+    <section id="about-me">
+      <h2>About Me</h2>
+      <p>I am a senior undergraduate student in Intelligent Perception Engineering at the College of Engineering Physics, <a href="https://english.sztu.edu.cn/">Shenzhen Technology University</a> (SZTU), graduating in 2027 (GPA 3.78/4.5, ranked 11/138 in my major).</p>
+      <p>My research focuses on the trustworthy use of AI in education. AI now takes part in many educational decisions: it scores essays, infers what students have mastered, chooses what to teach next, and signals which skills a curriculum should cover. These judgments are usually checked only for agreement with human labels, but agreement is not validity. A grader's scores can be inflated by text unrelated to quality, and a signal that looks predictive may be measuring something else. I approach this through evaluation itself, designing audits and building benchmarks that test such judgments against criteria the system under test cannot define. Next, I want to bring this approach to educational agents, so that they aim at real learning outcomes rather than predictive accuracy alone.</p>
+      <p><strong>Research Interests:</strong></p>
+      <ul class="interests">
+        <li><strong>AI in educational assessment</strong> — validity and reliability of LLM-based scoring, including robustness to gaming and whether scores reflect actual writing ability</li>
+        <li><strong>Educational agents</strong> — teaching agents that model learner state and are evaluated on real learning outcomes, such as delayed post-tests, rather than predictive accuracy</li>
+        <li><strong>Labor-market data for curriculum planning</strong> — identifying genuinely emerging skill requirements to inform curricula and training</li>
+      </ul>
+    </section>
+
+    <section id="news">
+      <h2><span aria-hidden="true">🔥</span>News</h2>
+      <ul class="news">
+        <li><span class="date">2026.09</span>: Submitted the camera-ready version of our <a href="#pub-dimasqp">ICONIP 2026 paper</a>.</li>
+        <li><span class="date">2026.08</span>: <a href="#pub-dimasqp">Opinion as Prior</a> was accepted to <strong>ICONIP 2026</strong>.</li>
+        <li><span class="date">2026.08</span>: Participated in <strong>CyberAI Cup 2026</strong> with team SZTU-AGI.</li>
+        <li><span class="date">2026.07</span>: <a href="#pub-cvm">Accuracy Is Not Validity</a> is under review at <strong>AAAI-27</strong>.</li>
+        <li><span class="date">2026.07</span>: <a href="#pub-ejrd">Breadth over Trend</a> is under review at the <strong>KDD 2027 Datasets and Benchmarks Track</strong>, and the <a href="https://github.com/SZTU-AGI/EJRD">EJRD benchmark</a> is publicly released.</li>
+        <li><span class="date">2026.07</span>: Our <a href="#pub-survey">survey on low-resource multilingual event mining</a> is under review at <strong>ACM Computing Surveys</strong>, and the <a href="https://github.com/SZTU-AGI/Low-Resource-Multilingual-Event-Mining">MELEE toolkit</a> is open-sourced.</li>
+      </ul>
+    </section>
+
+    <section id="education">
+      <h2><span aria-hidden="true">📖</span>Education</h2>
+      <ul class="timeline">
+        <li>
+          <div class="head"><span class="when">2023 – 2027 (expected)</span><span class="sep">|</span>B.Eng. in Intelligent Perception Engineering</div>
+          <div>College of Engineering Physics, Shenzhen Technology University, Shenzhen, China</div>
+          <div class="meta">GPA 3.78/4.5 · Average score 85.93/100 · Major rank 11/138</div>
+        </li>
+      </ul>
+    </section>
+
+    <section id="experience">
+      <h2><span aria-hidden="true">💻</span>Research &amp; Project Experience</h2>
+      <h3>Research</h3>
+      <ul class="timeline">
+        <li>
+          <div class="head"><span class="when">Dec 2025 – Present</span><span class="sep">|</span>Undergraduate Research, Shenzhen Technology University</div>
+          <div class="meta">Focus: validity of AI evaluation in education (LLM-based scoring, labor-market skill demand)</div>
+          <ul>
+            <li>First-author paper <a href="#pub-cvm">Accuracy Is Not Validity</a> (under review at AAAI-27): proposed the Construct Validity Margin (CVM) to audit how LLM essay graders respond to gaming edits relative to content degradation.</li>
+            <li>First-author paper <a href="#pub-ejrd">Breadth over Trend</a> (under review at the KDD 2027 Datasets and Benchmarks Track): introduced EJRD, a bilingual English–Chinese benchmark of job requirements, and SAVA, an audit framework that validates a signal only against a gold standard the signal did not define.</li>
+            <li>First-author survey <a href="#pub-survey">Low-Resource Multilingual Event Mining</a> (under review at ACM Computing Surveys): proposed an evaluation and reporting framework grounded in construct validity and open-sourced the companion MELEE toolkit.</li>
+            <li>First-author paper <a href="#pub-dimasqp">Opinion as Prior</a> (accepted to ICONIP 2026): proposed opinion-prior supervision for valence–arousal (VA) prediction in dimensional aspect-based sentiment analysis.</li>
+          </ul>
+        </li>
+      </ul>
+
+      <h3>Competitions</h3>
+      <ul class="timeline">
+        <li>
+          <div class="head"><span class="when">Jul 2026 – Aug 2026</span><span class="sep">|</span>CyberAI Cup 2026</div>
+          <div class="meta">Team SZTU-AGI</div>
+          <ul>
+            <li>Task 1: developed the pipeline that detects differences between packaging design files and photographs of the printed packaging, registering each photograph to its design and fusing a U-Net ensemble with a teammate's TASL model.</li>
+            <li>Task 2: took part in designing and implementing the final system, which audits farm compliance by judging each of the 41 checkpoints in a case as compliant, non-compliant, or not applicable.</li>
+            <li>Task 3: developed the pipeline that identifies the application and call mode of encrypted real-time communication traffic, using an ensemble of gradient-boosting models and TabICL.</li>
+            <li>Wrote the team's final technical report.</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <section id="publications">
+      <h2><span aria-hidden="true">📝</span>Publications</h2>
+      <p class="legend">† corresponding author</p>
+
+      <h3>Accepted</h3>
+      <ol class="pubs">
+        <li id="pub-dimasqp">
+          <span class="pub-title">Opinion as Prior: Supervised VA Prediction for DimASQP</span>
+          <span class="pub-authors"><span class="me">Yaoshuo Wu</span>, Haiqin Yang†, Zhong Ming†</span>
+          <span class="pub-venue">ICONIP 2026 (Springer CCIS)</span>
+          <span class="pub-note">Proposes opinion-prior supervision, which trains an opinion-span valence–arousal (VA) prior directly on gold labels. With the extraction architecture fixed, it lowers mean Euclidean VA error relative to a token-level baseline by 3.4% (Restaurant) and 7.5% (Laptop).</span>
+        </li>
+      </ol>
+
+      <h3>Under Review</h3>
+      <ol class="pubs" start="2">
+        <li id="pub-cvm">
+          <span class="pub-title">Accuracy Is Not Validity: Construct Validity Auditing for LLM Essay Graders</span>
+          <span class="pub-authors"><span class="me">Yaoshuo Wu</span> et al.</span>
+          <span class="pub-status">Under review at AAAI-27</span>
+          <span class="pub-note">Defines the Construct Validity Margin (CVM), which compares a grader's sensitivity to content degradation with its response to gaming edits, in units of human rater noise. On ASAP, 18 of the 27 grader–prompt cells with QWK ≥ 0.5 have CVM ≤ 0 (16/23 on PERSUADE 2.0); CVM-guided contrastive fine-tuning makes held-out worst-case CVM positive on all eight prompts.</span>
+        </li>
+        <li id="pub-ejrd">
+          <span class="pub-title">Breadth over Trend: Validating Emerging Job Requirement Signals with the Bilingual EJRD Benchmark</span>
+          <span class="pub-authors"><span class="me">Yaoshuo Wu</span>, Haiqin Yang†, Yue Wang, Irwin King</span>
+          <span class="pub-status">Under review at the KDD 2027 Datasets and Benchmarks Track</span>
+          <span class="pub-note">Tests emerging-requirement signals for construct validity against a gold standard they did not define. Employer breadth, not trend momentum, identifies requirements whose postings more often carry employer-selected screening questions (modest adjusted AUC 0.636); momentum ranks below chance on the unadjusted criterion.</span>
+          <span class="pub-links"><a class="chip" href="https://github.com/SZTU-AGI/EJRD">Benchmark &amp; Code</a></span>
+        </li>
+        <li id="pub-survey">
+          <span class="pub-title">Low-Resource Multilingual Event Mining: A Survey and a Framework for Evaluation and Reporting</span>
+          <span class="pub-authors"><span class="me">Yaoshuo Wu</span>, Shuxian Hou, Xiaochun Chen, Danyun Chen, Xiaomin Li, Jiahui Zhou, Shenyu Liu, Haiqin Yang†</span>
+          <span class="pub-status">Under review at ACM Computing Surveys</span>
+          <span class="pub-note">Treats evaluation in low-resource multilingual event mining as a construct-validity problem and proposes a robustness triangle (language gap, schema shift, boundary faithfulness) with a reporting checklist, grounded in a double-coded audit of 39 studies and a reanalysis of 168 per-language scores from six benchmarks.</span>
+          <span class="pub-links"><a class="chip" href="https://github.com/SZTU-AGI/Low-Resource-Multilingual-Event-Mining">MELEE Toolkit</a></span>
+        </li>
+      </ol>
+    </section>
+
+    <section id="awards">
+      <h2><span aria-hidden="true">🏆</span>Honors &amp; Awards</h2>
+      <ul>
+        <li><em>2025, 2026</em>: Provincial First Prize, Lanqiao Cup (16th and 17th editions)</li>
+      </ul>
+    </section>
+
+    <footer class="footer">Last updated: September 2026</footer>
+  </main>
+</div>
+</div>
+</body>
+</html>
