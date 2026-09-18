@@ -308,9 +308,9 @@
           <div class="head"><span class="when">Jul 2026 – Aug 2026</span><span class="sep">|</span>CyberAI Cup 2026</div>
           <div class="meta">Team SZTU-AGI</div>
           <ul>
-            <li>Task 1: developed the pipeline that detects differences between packaging design files and photographs of the printed packaging, registering each photograph to its design and fusing a U-Net ensemble with a teammate's TASL model.</li>
-            <li>Task 2: took part in designing and implementing the final system, which audits farm compliance by judging each of the 41 checkpoints in a case as compliant, non-compliant, or not applicable.</li>
-            <li>Task 3: developed the pipeline that identifies the application and call mode of encrypted real-time communication traffic, using an ensemble of gradient-boosting models and TabICL.</li>
+            <li><strong>Task 1 (packaging material difference mining):</strong> to localize small content changes between a package template and its photograph amid image-wide irrelevant differences, developed a pipeline that registers the photograph to the template, feeds signed high-pass difference maps to a U-Net, and fuses a three-seed ensemble with a teammate&#39;s TASL model.</li>
+            <li><strong>Task 2 (farm compliance audit):</strong> to judge 41 checkpoints per farm without labeled data, where “not applicable” requires positive evidence, helped build the team&#39;s LLM pipeline with policy-then-evidence retrieval, cited verdicts for each regulatory group, and a separate applicability gate.</li>
+            <li><strong>Task 3 (encrypted RTC traffic identification):</strong> to identify a flow&#39;s application and call mode (voice or video) from only the sizes and timings of its first five packets, developed a pipeline with 51 engineered features, a LightGBM/XGBoost/TabICL v2 ensemble, and class-prior correction for class imbalance.</li>
             <li>Wrote the team's final technical report.</li>
           </ul>
         </li>
