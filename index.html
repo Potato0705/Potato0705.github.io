@@ -147,7 +147,7 @@
   .icon { width: 16px; height: 16px; flex: none; fill: currentColor; color: var(--muted); }
 
   .content { min-width: 0; max-width: 820px; }
-  section, .pubs > li { scroll-margin-top: calc(env(safe-area-inset-top, 0px) + 76px); }
+  section, .pubs > li, .timeline > li { scroll-margin-top: calc(env(safe-area-inset-top, 0px) + 76px); }
   h2 {
     display: flex;
     align-items: center;
@@ -202,7 +202,7 @@
     .author-links { display: flex; flex-wrap: wrap; gap: 6px 18px; }
     .masthead a.home { display: none; }
     .masthead nav { flex-wrap: wrap; gap: 2px 16px; padding-block: 8px; }
-    section, .pubs > li { scroll-margin-top: calc(env(safe-area-inset-top, 0px) + 104px); }
+    section, .pubs > li, .timeline > li { scroll-margin-top: calc(env(safe-area-inset-top, 0px) + 104px); }
   }
   @media (max-width: 540px) {
     body { font-size: 15.5px; }
@@ -269,6 +269,7 @@
     <section id="news">
       <h2><span aria-hidden="true">🔥</span>News</h2>
       <ul class="news">
+        <li><span class="date">2026.10</span>: Official <a href="#cyberai-cup-2026">CyberAI Cup 2026</a> results are in: the Task 1 and Task 3 systems I developed achieved organizer-reported F<sub>β</sub> scores of <strong>0.9807</strong> and <strong>0.8753</strong>, respectively.</li>
         <li><span class="date">2026.09</span>: Submitted the camera-ready version of our <a href="#pub-dimasqp">ICONIP 2026 paper</a>.</li>
         <li><span class="date">2026.08</span>: <a href="#pub-dimasqp">Opinion as Prior</a> was accepted to <strong>ICONIP 2026</strong>.</li>
         <li><span class="date">2026.08</span>: Participated in <strong>CyberAI Cup 2026</strong> with team SZTU-AGI.</li>
@@ -307,13 +308,13 @@
 
       <h3>Competitions</h3>
       <ul class="timeline">
-        <li>
+        <li id="cyberai-cup-2026">
           <div class="head"><span class="when">Jul 2026 – Aug 2026</span><span class="sep">|</span>CyberAI Cup 2026</div>
-          <div class="meta">Team SZTU-AGI</div>
+          <div class="meta">Team SZTU-AGI · Main responsibility: Task 1 and Task 3</div>
           <ul>
-            <li><strong>Task 1 (packaging material difference mining):</strong> to localize small content changes between a package template and its photograph amid image-wide irrelevant differences, developed a pipeline that registers the photograph to the template, feeds signed high-pass difference maps to a U-Net, and fuses a three-seed ensemble with a teammate&#39;s TASL model.</li>
-            <li><strong>Task 2 (farm compliance audit):</strong> to judge 41 checkpoints per farm without labeled data, where “not applicable” requires positive evidence, helped build the team&#39;s LLM pipeline with policy-then-evidence retrieval, cited verdicts for each regulatory group, and a separate applicability gate.</li>
-            <li><strong>Task 3 (encrypted RTC traffic identification):</strong> to identify a flow&#39;s application and call mode (voice or video) from only the sizes and timings of its first five packets, developed a pipeline with 51 engineered features, a LightGBM/XGBoost/TabICL v2 ensemble, and class-prior correction for class imbalance.</li>
+            <li><strong>Task 1 (packaging material difference mining):</strong> developed a detection pipeline using image registration, signed high-pass difference maps and a three-seed U-Net ensemble; fused it with a teammate&#39;s TASL model. <strong>Official test F<sub>β</sub> score: 0.9807.</strong></li>
+            <li><strong>Task 3 (encrypted RTC traffic identification):</strong> developed a classifier using 51 features from the first five packets, a LightGBM/XGBoost/TabICL v2 ensemble and class-prior correction. <strong>Official test F<sub>β</sub> score: 0.8753.</strong></li>
+            <li><strong>Task 2 (farm compliance audit):</strong> contributed to early prototyping and experiments for the team&#39;s LLM-based compliance audit system.</li>
             <li>Wrote the team's final technical report.</li>
           </ul>
         </li>
@@ -366,7 +367,7 @@
       </ul>
     </section>
 
-    <footer class="footer">Last updated: September 2026</footer>
+    <footer class="footer">Last updated: October 12, 2026</footer>
   </main>
 </div>
 </div>
