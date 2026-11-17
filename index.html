@@ -4,9 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="color-scheme" content="light dark">
-<title>Yaoshuo Wu</title>
+<title>Yaoshuo Wu | AI &amp; NLP Research</title>
+<link rel="canonical" href="https://potato0705.github.io/">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8E%93%3C/text%3E%3C/svg%3E">
-<meta property="og:title" content="Yaoshuo Wu">
+<meta property="og:title" content="Yaoshuo Wu | AI &amp; NLP Research">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://potato0705.github.io/">
 <meta property="og:description" content="Academic homepage of Yaoshuo Wu (吴耀铄), undergraduate researcher in artificial intelligence and natural language processing at Shenzhen Technology University.">
 <meta property="og:image" content="https://potato0705.github.io/images/photo.jpg">
 <meta name="description" content="Academic homepage of Yaoshuo Wu (吴耀铄), undergraduate researcher in artificial intelligence and natural language processing at Shenzhen Technology University.">
@@ -145,6 +148,10 @@
   .author-links a { overflow-wrap: anywhere; }
   .author-links .dot { color: var(--muted); margin-inline: 2px; }
   .icon { width: 16px; height: 16px; flex: none; fill: currentColor; color: var(--muted); }
+  .skip-link { position: absolute; left: 16px; top: -80px; z-index: 20; padding: 8px 12px; background: var(--bg); }
+  .skip-link:focus { top: 8px; }
+  .application-note { margin: 18px 0; padding: 12px 16px; border-left: 3px solid var(--link); background: var(--chip-bg); }
+  .quick-links { display: flex; flex-wrap: wrap; gap: 10px 20px; margin: 14px 0 22px; font-weight: 600; }
 
   .content { min-width: 0; max-width: 820px; }
   section, .pubs > li, .timeline > li { scroll-margin-top: calc(env(safe-area-inset-top, 0px) + 76px); }
@@ -163,6 +170,7 @@
   }
   section:first-child h2 { margin-top: 0; }
   h3 { margin: 22px 0 8px; font-size: 1.06rem; font-weight: 700; color: var(--heading); }
+  h4 { margin: 16px 0 5px; font-size: 1rem; color: var(--heading); }
   p { margin: 0 0 12px; }
   ul, ol { margin: 0; padding-left: 1.35em; }
   li { margin: 6px 0; }
@@ -178,6 +186,12 @@
   .timeline .meta { color: var(--muted); font-size: 0.94rem; }
   .timeline ul { margin-top: 6px; padding-left: 1.2em; list-style: circle; }
   .timeline ul li { margin: 4px 0; }
+  .timeline .micro-major { margin-top: 12px; }
+  .experience-list > li { margin-bottom: 26px; }
+  .experience-list p { margin-top: 5px; }
+  .award-list { list-style: none; padding: 0; }
+  .award-list li { display: grid; grid-template-columns: 3.5em minmax(0, 1fr); gap: 12px; margin: 12px 0; }
+  .award-list time { color: var(--muted); font-variant-numeric: tabular-nums; }
 
   .pubs > li { margin: 0 0 18px; padding-left: 2px; }
   .pubs > li::marker { color: var(--heading); font-weight: 600; font-variant-numeric: tabular-nums; }
@@ -213,6 +227,7 @@
 </style>
 </head>
 <body>
+<a class="skip-link" href="#main-content">Skip to content</a>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
   <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></symbol>
   <symbol id="i-uni" viewBox="0 0 24 24"><path d="M12 2 2 7v2h20V7L12 2zM4 11v7h3v-7H4zm6.5 0v7h3v-7h-3zM17 11v7h3v-7h-3zM2 20v2h20v-2H2z"/></symbol>
@@ -241,23 +256,25 @@
     <div>
       <h1 class="author-name">Yaoshuo Wu<span class="zh" lang="zh-CN">吴耀铄</span></h1>
       <p class="author-role">Undergraduate @ SZTU</p>
-      <p class="author-keywords">Machine Learning;<br>AI Agents;<br>Natural Language Processing</p>
+      <p class="author-keywords">LLM Evaluation<br>Natural Language Processing<br>AI Agents</p>
       <ul class="author-links">
         <li><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>Shenzhen, China</li>
         <li><svg class="icon" aria-hidden="true"><use href="#i-uni"/></svg>Shenzhen Technology University</li>
         <li><svg class="icon" aria-hidden="true"><use href="#i-book"/></svg>Intelligent Perception Engineering</li>
         <li><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg><a href="mailto:yaoshuowu75@gmail.com">yaoshuowu75@gmail.com</a></li>
         <li><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg><a href="https://github.com/Potato0705">GitHub</a></li>
-        <li><svg class="icon" aria-hidden="true"><use href="#i-file"/></svg><a href="files/Yaoshuo_Wu_CV.pdf">CV (PDF)</a><span class="dot" aria-hidden="true">·</span><a href="files/Yaoshuo_Wu_CV_zh.pdf" lang="zh-CN" hreflang="zh-CN">中文版</a></li>
+        <li><svg class="icon" aria-hidden="true"><use href="#i-file"/></svg><a href="files/Yaoshuo_Wu_CV.pdf">Curriculum Vitae (PDF)</a></li>
       </ul>
     </div>
   </aside>
 
-  <main class="content">
+  <main class="content" id="main-content">
     <section id="about-me">
       <h2>About Me</h2>
-      <p>I am a senior undergraduate student in Intelligent Perception Engineering at the College of Engineering Physics, <a href="https://english.sztu.edu.cn/">Shenzhen Technology University</a> (SZTU), graduating in 2027 (GPA 3.78/4.5, ranked 11/138 in my major).</p>
-      <p>My research spans artificial intelligence and natural language processing. I have worked on LLM essay grading, bilingual job-requirement benchmarks, dimensional sentiment analysis, and multilingual event mining. Across these projects, I build benchmarks and conduct empirical evaluations to examine what models measure and where they fail. I am also interested in language models and AI agents.</p>
+      <p>I am a final-year undergraduate in Intelligent Perception Engineering at <a href="https://english.sztu.edu.cn/">Shenzhen Technology University</a>, expecting to graduate in 2027. My GPA is <strong>3.78/4.5</strong>, and I rank <strong>11th out of 138</strong> students in my major.</p>
+      <p>My research focuses on <strong>LLM evaluation, natural language processing, and benchmark development</strong>. During a research internship at The Chinese University of Hong Kong, I led studies on <a href="#pub-cvm">LLM essay grading</a> and <a href="#pub-ejrd">job requirement analysis</a> and am the first author of both manuscripts. I am also interested in AI agents and how to evaluate their capabilities.</p>
+      <p class="application-note">I am seeking <strong>PhD opportunities starting in fall 2027</strong> in artificial intelligence and computer science.</p>
+      <div class="quick-links"><a href="files/Yaoshuo_Wu_CV.pdf">Download CV (PDF)</a><a href="mailto:yaoshuowu75@gmail.com">Email me</a></div>
       <p><strong>Research Interests:</strong></p>
       <ul class="interests">
         <li><strong>Artificial intelligence and machine learning:</strong> language models, AI agents, and empirical evaluation</li>
@@ -266,75 +283,71 @@
     </section>
 
     <section id="news">
-      <h2><span aria-hidden="true">🔥</span>News</h2>
+      <h2>News</h2>
       <ul class="news">
-        <li><span class="date">2026.11</span>: <a href="#pub-ejrd">Breadth over Trend</a> is in preparation for resubmission.</li>
-        <li><span class="date">2026.10</span>: Official <a href="#cyberai-cup-2026">CyberAI Cup 2026</a> results are in: the Task 1 and Task 3 systems I developed achieved organizer-reported F<sub>β</sub> scores of <strong>0.9807</strong> and <strong>0.8753</strong>, respectively.</li>
-        <li><span class="date">2026.09</span>: Submitted the camera-ready version of our <a href="#pub-dimasqp">ICONIP 2026 paper</a>.</li>
+        <li><span class="date">2026.11</span>: My updated <a href="files/Yaoshuo_Wu_CV.pdf">CV</a> is available for fall 2027 PhD applications.</li>
+        <li><span class="date">2026.10</span>: Our team, SZTU-AGI, ranked <strong>8th worldwide</strong> in <a href="#cyberai-cup-2026">CyberAI Cup 2026</a>. I served as team lead.</li>
         <li><span class="date">2026.08</span>: <a href="#pub-dimasqp">Opinion as Prior</a> was accepted to <strong>ICONIP 2026</strong>.</li>
-        <li><span class="date">2026.08</span>: Participated in <strong>CyberAI Cup 2026</strong> with team SZTU-AGI.</li>
-        <li><span class="date">2026.07</span>: <a href="#pub-cvm">Accuracy Is Not Validity</a> is under review at <strong>AAAI-27</strong>.</li>
-        <li><span class="date">2026.07</span>: Released the <a href="https://github.com/SZTU-AGI/EJRD">EJRD benchmark and code</a>.</li>
-        <li><span class="date">2026.07</span>: Our <a href="#pub-survey">survey on low-resource multilingual event mining</a> is under review at <strong>ACM Computing Surveys</strong>, and the <a href="https://github.com/SZTU-AGI/Low-Resource-Multilingual-Event-Mining">MELEE toolkit</a> is open-sourced.</li>
       </ul>
     </section>
 
     <section id="education">
-      <h2><span aria-hidden="true">📖</span>Education</h2>
+      <h2>Education</h2>
       <ul class="timeline">
         <li>
           <div class="head"><span class="when">2023 – 2027 (expected)</span><span class="sep">|</span>B.Eng. in Intelligent Perception Engineering</div>
           <div>College of Engineering Physics, Shenzhen Technology University, Shenzhen, China</div>
-          <div class="meta">GPA 3.78/4.5 · Average score 85.93/100 · Major rank 11/138</div>
-        </li>
-        <li>
-          <div class="head">Additional Study: Artificial Intelligence Micro-program</div>
-          <div class="meta">18 credits earned · Average score 87.6/100 · Program rank 6/54</div>
-          <div>Selected coursework: Machine Learning and Deep Learning; Natural Language Processing; Large Language Models</div>
+          <div class="meta">GPA 3.78/4.5 · Average score 86.01/100 · Major rank 11/138</div>
+          <p><strong>Major coursework:</strong> Linear Algebra; Probability Theory and Mathematical Statistics; Programming Fundamentals; Signals and Systems; Intelligent Information Processing.</p>
+          <div class="micro-major"><strong>Micro-major in Artificial Intelligence</strong> · Ranked 6th out of 54</div>
+          <div class="meta">Mar 2025 – Jul 2026</div>
+          <div>Selected coursework: Machine Learning and Deep Learning; Natural Language Processing; Large Model Technologies and Applications.</div>
         </li>
       </ul>
     </section>
 
     <section id="experience">
-      <h2><span aria-hidden="true">💻</span>Research &amp; Project Experience</h2>
-      <h3>Research</h3>
-      <ul class="timeline">
+      <h2>Research &amp; Project Experience</h2>
+      <h3>Research Internship</h3>
+      <ul class="timeline experience-list">
         <li>
-          <div class="head"><span class="when">Dec 2025 – Present</span><span class="sep">|</span>Undergraduate Research, Shenzhen Technology University</div>
-          <div class="meta">Focus: NLP, benchmark construction, and empirical evaluation</div>
-          <ul>
-            <li>First-author paper <a href="#pub-cvm">Accuracy Is Not Validity</a> (under review at AAAI-27): proposed the Construct Validity Margin (CVM) to audit how LLM essay graders respond to gaming edits relative to content degradation.</li>
-            <li>Led the <a href="#pub-ejrd">Breadth over Trend</a> study (in preparation for resubmission): built the bilingual EJRD benchmark from a faculty-provided corpus of 221,582 Hong Kong job postings, implemented SAVA, analyzed the experiments, and drafted the manuscript.</li>
-            <li>First-author survey <a href="#pub-survey">Low-Resource Multilingual Event Mining</a> (under review at ACM Computing Surveys): proposed an evaluation and reporting framework grounded in construct validity and open-sourced the companion MELEE toolkit.</li>
-            <li>First-author paper <a href="#pub-dimasqp">Opinion as Prior</a> (accepted to ICONIP 2026): proposed opinion-prior supervision for valence–arousal (VA) prediction in dimensional aspect-based sentiment analysis.</li>
-          </ul>
+          <div class="head">Research Intern · The Chinese University of Hong Kong</div>
+          <div class="meta">Apr 2026 – Aug 2026 · Led two studies as first author</div>
+          <h4><a href="#pub-cvm">CVM: Auditing LLM Essay Graders</a></h4>
+          <p>Agreement with human scores can hide two failures: a grader may ignore content loss or reward irrelevant text. I designed an audit that tests both responses and introduced the Construct Validity Margin (CVM) to compare score drops and gains. The audit covered eight graders. Among grader and prompt combinations with at least moderate agreement with human scores, gains from irrelevant text matched or exceeded losses from content removal in <strong>18/27 on ASAP and 16/23 on PERSUADE 2.0</strong>.</p>
+          <p>I also developed a CVM-based contrastive objective for fine tuning Qwen2.5-7B, reducing score inflation from keyword stuffing not seen during training.</p>
+          <h4><a href="#pub-ejrd">EJRD: Interpreting Changes in Job Requirements</a></h4>
+          <p>More mentions of a job requirement do not necessarily mean broader employer demand. I built the Emerging Job Requirement Dataset (EJRD) from Hong Kong job postings and developed the Scope-Aware Validity Audit (SAVA). The framework evaluates mention growth and employer counts using human judgments of novelty and questionnaire records. Employer counts better identified requirements associated with questionnaire use. A <strong>manual audit of 200 cases</strong> also showed that a questionnaire's presence did not necessarily mean it assessed the requirement.</p>
         </li>
       </ul>
 
-      <h3>Competitions</h3>
-      <ul class="timeline">
+      <h3>Projects &amp; Competitions</h3>
+      <ul class="timeline experience-list">
+        <li>
+          <div class="head"><a href="#pub-dimasqp">Opinion as Prior: Supervised VA Prediction for DimASQP</a></div>
+          <div class="meta">Dec 2025 – May 2026 · First author · ICONIP 2026</div>
+          <p>Different opinions about the same aspect can express different emotions. I introduced direct supervision of scores predicted from opinion text, followed by refinement using the corresponding aspect. On samples correctly extracted by all compared models, mean Euclidean error fell by <strong>3.4% on Restaurant and 7.5% on Laptop</strong> relative to the baseline.</p>
+        </li>
         <li id="cyberai-cup-2026">
-          <div class="head"><span class="when">Jul 2026 – Aug 2026</span><span class="sep">|</span>CyberAI Cup 2026</div>
-          <div class="meta">Team SZTU-AGI · Main responsibility: Task 1 and Task 3</div>
+          <div class="head">CyberAI Cup 2026 · Ranked 8th Worldwide</div>
+          <div class="meta">Jul 2026 – Aug 2026 · Team lead, SZTU-AGI · Responsible for packaging image detection and encrypted traffic classification</div>
           <ul>
-            <li><strong>Task 1 (packaging material difference mining):</strong> developed a detection pipeline using image registration, signed high-pass difference maps and a three-seed U-Net ensemble; fused it with a teammate&#39;s TASL model. <strong>Official test F<sub>β</sub> score: 0.9807.</strong></li>
-            <li><strong>Task 3 (encrypted RTC traffic identification):</strong> developed a classifier using 51 features from the first five packets, a LightGBM/XGBoost/TabICL v2 ensemble and class-prior correction. <strong>Official test F<sub>β</sub> score: 0.8753.</strong></li>
+            <li><strong>Packaging image difference detection:</strong> To distinguish small packaging changes from misalignment, lighting, and noise, I combined image registration, difference maps, filtering, and a U-Net ensemble. On a harder internal validation split, the three-model ensemble reduced false positives from 574 for a single model to 30.</li>
+            <li><strong>Encrypted traffic classification:</strong> To identify call applications without access to packet contents, I designed 51 features from the first five packets and combined LightGBM, XGBoost, and TabICL v2. In internal flow-level cross-validation, the features improved TabICL v2's macro F1 from 0.788 to approximately 0.823.</li>
           </ul>
         </li>
       </ul>
     </section>
 
     <section id="publications">
-      <h2><span aria-hidden="true">📝</span>Publications</h2>
-      <p class="legend">† corresponding author</p>
+      <h2>Publications &amp; Manuscripts</h2>
 
       <h3>Accepted</h3>
       <ol class="pubs">
         <li id="pub-dimasqp">
           <span class="pub-title">Opinion as Prior: Supervised VA Prediction for DimASQP</span>
-          <span class="pub-authors"><span class="me">Yaoshuo Wu</span>, Haiqin Yang†, Zhong Ming†</span>
+          <span class="pub-authors"><span class="me">Yaoshuo Wu</span>, Haiqin Yang, Zhong Ming</span>
           <span class="pub-venue">ICONIP 2026 (Springer CCIS)</span>
-          <span class="pub-note">Proposes opinion-prior supervision, which trains an opinion-span valence–arousal (VA) prior directly on gold labels. With the extraction architecture fixed, it lowers mean Euclidean VA error relative to a token-level baseline by 3.4% (Restaurant) and 7.5% (Laptop).</span>
           <span class="pub-links"><a class="chip" href="https://github.com/Potato0705/DimASQP">Code</a></span>
         </li>
       </ol>
@@ -344,34 +357,35 @@
         <li id="pub-cvm">
           <span class="pub-title">Accuracy Is Not Validity: Construct Validity Auditing for LLM Essay Graders</span>
           <span class="pub-authors"><span class="me">Yaoshuo Wu</span> et al.</span>
-          <span class="pub-status">Under review at AAAI-27</span>
-          <span class="pub-note">Defines the Construct Validity Margin (CVM), which compares a grader's sensitivity to content degradation with its response to gaming edits, in units of human rater noise. On ASAP, 18 of the 27 grader–prompt cells with QWK ≥ 0.5 have CVM ≤ 0 (16/23 on PERSUADE 2.0); CVM-guided contrastive fine-tuning makes held-out worst-case CVM positive on all eight prompts.</span>
+          <span class="pub-status">Manuscript · 2026</span>
         </li>
         <li id="pub-ejrd">
           <span class="pub-title">Breadth over Trend: Validating Emerging Job Requirement Signals with the Bilingual EJRD Benchmark</span>
-          <span class="pub-authors"><span class="me">Yaoshuo Wu</span>, Haiqin Yang†, Yue Wang, Irwin King</span>
-          <span class="pub-status">In preparation for resubmission</span>
-          <span class="pub-note">Tests emerging-requirement signals for construct validity against a gold standard they did not define. Employer breadth, not trend momentum, identifies requirements whose postings more often carry employer-selected screening questions (modest adjusted AUC 0.636); momentum ranks below chance on the unadjusted criterion.</span>
+          <span class="pub-authors"><span class="me">Yaoshuo Wu</span>, Haiqin Yang, Yue Wang, Irwin King</span>
+          <span class="pub-status">Manuscript · 2026</span>
           <span class="pub-links"><a class="chip" href="https://github.com/SZTU-AGI/EJRD">Benchmark &amp; Code</a></span>
         </li>
         <li id="pub-survey">
           <span class="pub-title">Low-Resource Multilingual Event Mining: A Survey and a Framework for Evaluation and Reporting</span>
-          <span class="pub-authors"><span class="me">Yaoshuo Wu</span>, Shuxian Hou, Xiaochun Chen, Danyun Chen, Xiaomin Li, Jiahui Zhou, Shenyu Liu, Haiqin Yang†</span>
-          <span class="pub-status">Under review at ACM Computing Surveys</span>
-          <span class="pub-note">Treats evaluation in low-resource multilingual event mining as a construct-validity problem and proposes a robustness triangle (language gap, schema shift, boundary faithfulness) with a reporting checklist, grounded in a double-coded audit of 39 studies and a reanalysis of 168 per-language scores from six benchmarks.</span>
+          <span class="pub-authors"><span class="me">Yaoshuo Wu</span>, Shuxian Hou, Xiaochun Chen, Danyun Chen, Xiaomin Li, Jiahui Zhou, Shenyu Liu, Haiqin Yang</span>
+          <span class="pub-status">Manuscript · 2026</span>
+          <span class="pub-note">An evaluation and reporting framework informed by an audit of 39 studies and a reanalysis of 168 scores reported by language across six benchmarks.</span>
           <span class="pub-links"><a class="chip" href="https://github.com/SZTU-AGI/Low-Resource-Multilingual-Event-Mining">MELEE Toolkit</a></span>
         </li>
       </ol>
     </section>
 
     <section id="awards">
-      <h2><span aria-hidden="true">🏆</span>Honors &amp; Awards</h2>
-      <ul>
-        <li><em>2025, 2026</em>: Provincial First Prize, Lanqiao Cup (16th and 17th editions)</li>
+      <h2>Honors &amp; Awards</h2>
+      <ul class="award-list">
+        <li><time datetime="2026">2026</time><div><strong>Ranked 8th Worldwide</strong> · CyberAI Cup 2026<br>Team lead, SZTU-AGI</div></li>
+        <li><time datetime="2026">2026</time><div><strong>Provincial First Prize</strong> · 17th Lanqiao Cup<br>National Software and Information Technology Competition for College Students</div></li>
+        <li><time datetime="2025">2025</time><div><strong>Provincial First Prize</strong> · 16th Lanqiao Cup<br>National Software and Information Technology Competition for College Students</div></li>
+        <li><time datetime="2024">2024</time><div><strong>Provincial Third Prize</strong><br>Guangdong Undergraduate Mathematical Contest in Modeling</div></li>
       </ul>
     </section>
 
-    <footer class="footer">Last updated: November 13, 2026</footer>
+    <footer class="footer">Last updated: November 17, 2026</footer>
   </main>
 </div>
 </div>
